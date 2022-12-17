@@ -4,7 +4,6 @@ import coin from "../images/coin.gif";
 import happyDog from "../images/happyDog.png";
 import EachWinner from "./EachWinner";
 
-
 const Winner = () => {
   return (
     <div className="winner-div">
@@ -28,7 +27,6 @@ const Winner = () => {
           userImage={happyDog}
           userInput={"이 바보들아!"}
         />
-        
       </div>
     </div>
   );
