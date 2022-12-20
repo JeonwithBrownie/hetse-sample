@@ -10,11 +10,14 @@
 .Chat {
   width: 100vw;
   height: 100vh;
-  background: rgb(22,23,40);
   color: #212121;
   font-family: "DungGeunMo";
   display: grid;
   place-items: center;
+  left : 600px;
+  top : 150px;
+  position : fixed;
+  z-index: 50;
 }
 body {
   margin: 0%;

@@ -19,8 +19,10 @@
   background-size: cover;
   background-attachment: fixed;
   object-fit: fill;
+  position: absolute;
   height: 100vh;
   width: 100vw;
+  z-index: 1000;
 }
 
 .textDiv {

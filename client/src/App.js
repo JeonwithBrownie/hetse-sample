@@ -28,6 +28,8 @@ function App() {
     <div className="App">
       <Hero />
       <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
       <Game />
       <SpaceBetweenPage />
       <Winner />
