@@ -4,6 +4,7 @@ import coin from "../images/coin.gif";
 import NavBar from "./Navbar";
 import { Navbar } from "react-bootstrap";
 import MainNavbar from "./MainNavbar";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -24,9 +25,11 @@ const Hero = () => {
           코인 순위를 예측하고 보상을 획득하세요 &nbsp;
           <img className="coinImage" src={coin} alt="spinning coin" /> <br />
           <br></br>
-          <button type="button" class="nes-btn is-warning">
-            예측하러 가기
-          </button>
+          <Link to="game" spy={true} smooth={true}>
+            <button type="button" class="nes-btn is-warning">
+              예측하러 가기
+            </button>
+          </Link>
         </div>
       </div>
     </div>

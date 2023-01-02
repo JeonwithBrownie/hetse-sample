@@ -9,10 +9,10 @@ import WinnerRecord from "./components/WinnerRecord";
 import SpaceBetweenPage from "./components/SpaceBetweenPage";
 import RealTimeRanking from "./components/RealTimeRanking";
 import SmallSpace from "./components/SmallSpace";
+import Space1 from "./components/Space1";
 
 import io from "socket.io-client";
 import { useState, useEffect } from "react";
-import { Scrollbar } from "react-scrollbars-custom";
 import Chat from "./Chat";
 import namer from "korean-name-generator";
 
@@ -30,74 +30,58 @@ function App() {
 
   useEffect(() => {}, [chatOn]);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", updateScroll);
-    return () => {
-      window.removeEventListener("scroll", updateScroll); //unmount시 해제되도록
-    };
-  }, []);
-
   return (
     <div className="App">
-      
-        <Hero />
-        <NavBar />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
+      <Hero />
+      <NavBar />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
 
-        <div id="game">
-          <SmallSpace />
+      <div id="game">
+        <SmallSpace />
+      </div>
+      <Game />
+      <SpaceBetweenPage />
+      <div id="winner">
+        <SmallSpace />
+      </div>
+      <Winner />
+
+      <SpaceBetweenPage />
+      <div id="history">
+        <SmallSpace />
+      </div>
+      <History />
+
+      <SpaceBetweenPage />
+      <WinnerRecord />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <RealTimeRanking />
+      <SpaceBetweenPage />
+
+      {chatOn && showChat ? (
+        <div className="Chat">
+          <Chat
+            setChatOn={setChatOn}
+            socket={socket}
+            username={generatedUserName}
+            room={settledRoom}
+          />
         </div>
-        <Game />
-        <SpaceBetweenPage />
-        <div id="winner">
-          <SmallSpace />
-        </div>
-        <Winner />
-
-        <SpaceBetweenPage />
-        <div id="history">
-          <SmallSpace />
-        </div>
-        <History />
-
-        <SpaceBetweenPage />
-        <WinnerRecord />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <SpaceBetweenPage />
-        <RealTimeRanking />
-        <SpaceBetweenPage />
-
-        {chatOn && showChat ? (
-          <div className="Chat">
-            <Chat
-              setChatOn={setChatOn}
-              socket={socket}
-              username={generatedUserName}
-              room={settledRoom}
-            />
-          </div>
-        ) : (
-          <button
-            type="button"
-            className="chatting-button"
-            onClick={() => setChatOn(true)}
-          >
-            Live Chat
-          </button>
-        )}
-      
+      ) : (
+        <button
+          type="button"
+          className="chatting-button"
+          onClick={() => setChatOn(true)}
+        >
+          Live Chat
+        </button>
+      )}
     </div>
   );
 }
