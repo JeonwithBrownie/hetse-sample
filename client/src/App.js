@@ -12,6 +12,7 @@ import SmallSpace from "./components/SmallSpace";
 
 import io from "socket.io-client";
 import { useState, useEffect } from "react";
+import { Scrollbar } from "react-scrollbars-custom";
 import Chat from "./Chat";
 import namer from "korean-name-generator";
 
@@ -44,57 +45,59 @@ function App() {
 
   return (
     <div className="App">
-      <Hero />
-      <NavBar />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
       
-      <div id="game">
-        <SmallSpace />
-      </div>
-      <Game />
-      <SpaceBetweenPage />
-      <div id="winner">
-        <SmallSpace/>
-      </div>
-      <Winner />
+        <Hero />
+        <NavBar />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
 
-      <SpaceBetweenPage />
-      <div id="history">
-        <SmallSpace/>
-      </div>
-      <History />
-      
-      <SpaceBetweenPage />
-      <WinnerRecord />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <SpaceBetweenPage />
-      <RealTimeRanking />
-      <SpaceBetweenPage />
-
-      {chatOn && showChat ? (
-        <div className="Chat">
-          <Chat
-            setChatOn={setChatOn}
-            socket={socket}
-            username={generatedUserName}
-            room={settledRoom}
-          />
+        <div id="game">
+          <SmallSpace />
         </div>
-      ) : (
-        <button
-          type="button"
-          className="chatting-button"
-          onClick={() => setChatOn(true)}
-        >
-          Live Chat
-        </button>
-      )}
+        <Game />
+        <SpaceBetweenPage />
+        <div id="winner">
+          <SmallSpace />
+        </div>
+        <Winner />
+
+        <SpaceBetweenPage />
+        <div id="history">
+          <SmallSpace />
+        </div>
+        <History />
+
+        <SpaceBetweenPage />
+        <WinnerRecord />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <SpaceBetweenPage />
+        <RealTimeRanking />
+        <SpaceBetweenPage />
+
+        {chatOn && showChat ? (
+          <div className="Chat">
+            <Chat
+              setChatOn={setChatOn}
+              socket={socket}
+              username={generatedUserName}
+              room={settledRoom}
+            />
+          </div>
+        ) : (
+          <button
+            type="button"
+            className="chatting-button"
+            onClick={() => setChatOn(true)}
+          >
+            Live Chat
+          </button>
+        )}
+      
     </div>
   );
 }
