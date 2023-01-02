@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+import downArrow from "./images/downArrow.png";
 
-function Chat({ socket, username, room }) {
+function Chat({ setChatOn, socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -32,6 +33,7 @@ function Chat({ socket, username, room }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
+        <button className="chat-close-button" onClick={()=>{setChatOn(false)}}><img src={downArrow} /></button>
         <p>Live Chat</p>
       </div>
       <div className="chat-body">

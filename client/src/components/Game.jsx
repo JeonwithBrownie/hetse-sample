@@ -16,6 +16,13 @@ import CoinRenderSelector from "./CoinRenderSelector";
 
 import { useState, useEffect } from "react";
 
+import {
+  AwesomeButton,
+  AwesomeButtonProgress,
+  AwesomeButtonSocial,
+} from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
+
 const Game = () => {
   const coinList = {
     Bitcoin: { bitcoin },
@@ -38,12 +45,13 @@ const Game = () => {
 
   const removeList = (selectedList) => {
     setSelectedList([]);
-  }
+  };
   useEffect(() => {
     console.log("useEffect!!", selectedList);
   }, [selectedList]);
   return (
     <div className="game-div">
+    
       <div>#2 Game</div>
       <div className="title-div">
         <div className="titleText">게임페이지</div>
@@ -117,7 +125,11 @@ const Game = () => {
                       랜덤 고르기
                     </button>
 
-                    <button type="button" class="nes-btn two-button" onClick={removeList}>
+                    <button
+                      type="button"
+                      class="nes-btn two-button"
+                      onClick={removeList}
+                    >
                       리셋하기
                     </button>
                   </div>
@@ -144,12 +156,12 @@ const Game = () => {
                     <div className="unselected-img"></div>
                   </div>
                 </div>
-
                 <label for="textarea_field">했제의 한 마디</label>
                 <textarea id="textarea_field" class="nes-textarea"></textarea>
                 <button type="button" class="nes-btn is-warning">
                   예측하기
                 </button>
+                
               </div>
             </div>
           </div>

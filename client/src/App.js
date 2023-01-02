@@ -8,7 +8,7 @@ import History from "./components/History";
 import WinnerRecord from "./components/WinnerRecord";
 import SpaceBetweenPage from "./components/SpaceBetweenPage";
 import RealTimeRanking from "./components/RealTimeRanking";
-import Space1 from "./components/Space1";
+import SmallSpace from "./components/SmallSpace";
 
 import io from "socket.io-client";
 import { useState, useEffect } from "react";
@@ -19,23 +19,53 @@ const socket = io.connect("http://localhost:3001");
 
 function App() {
   const [showChat, setShowChat] = useState(false);
+  const [chatOn, setChatOn] = useState(false);
   const settledRoom = "1";
   const generatedUserName = namer.generate(true);
   useEffect(() => {
     socket.emit("join_room", settledRoom);
     setShowChat(true);
   }, []);
+
+  useEffect(() => {}, [chatOn]);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll); //unmount시 해제되도록
+    };
+  }, []);
+
   return (
     <div className="App">
       <Hero />
-      <Space1 />
+      <NavBar />
       <SpaceBetweenPage />
       <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      
+      <div id="game">
+        <SmallSpace />
+      </div>
       <Game />
       <SpaceBetweenPage />
+      <div id="winner">
+        <SmallSpace/>
+      </div>
       <Winner />
+
       <SpaceBetweenPage />
+      <div id="history">
+        <SmallSpace/>
+      </div>
       <History />
+      
       <SpaceBetweenPage />
       <WinnerRecord />
       <SpaceBetweenPage />
@@ -46,15 +76,25 @@ function App() {
       <SpaceBetweenPage />
       <RealTimeRanking />
       <SpaceBetweenPage />
-      <div className="Chat">
-        {showChat && (
+
+      {chatOn && showChat ? (
+        <div className="Chat">
           <Chat
+            setChatOn={setChatOn}
             socket={socket}
             username={generatedUserName}
             room={settledRoom}
           />
-        )}
-      </div>
+        </div>
+      ) : (
+        <button
+          type="button"
+          className="chatting-button"
+          onClick={() => setChatOn(true)}
+        >
+          Live Chat
+        </button>
+      )}
     </div>
   );
 }

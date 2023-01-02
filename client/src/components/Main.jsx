@@ -2,11 +2,13 @@ import React from "react";
 import "./main.css";
 import coin from "../images/coin.gif";
 import NavBar from "./Navbar";
+import { Navbar } from "react-bootstrap";
+import MainNavbar from "./MainNavbar";
 
 const Hero = () => {
   return (
     <div className="bigContainer">
-      <NavBar />
+      <MainNavbar />
       <div className="heroBoxWrapper">
         <div className="mal">
           <div class="nes-balloon from-right">

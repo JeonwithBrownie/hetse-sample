@@ -12,6 +12,14 @@
 @import url("nes.css/css/nes.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+*:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
 .bigContainer {
   background-image: url(../images/main.gif);
   background-repeat: no-repeat center;
@@ -54,7 +62,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
+  padding: 15px;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(22, 23, 40, 0.5);
+}
+
+.main-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  z-index: 1500;
 }
 
 .navItem {
@@ -74,31 +94,13 @@
 }
 
 .coin-button-wrapper {
-  background-color : transparent;
+  background-color: transparent;
   border: 0px;
 }
 
 .coin-button-img {
   width: 70px;
   height: 70px;
-}
-
-.hahaa {
-  display: block;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 8px;
-  width: 80%;
-  max-width: 200px;
-  background: #fff;
-  /* fallback color for old browsers */
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-out;
 }
 
 .nes-balloon {
@@ -128,7 +130,7 @@
 }
 
 .heroBoxWrapper {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-left: 30%;
 }
 
@@ -409,7 +411,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .gameWrapper {
@@ -456,15 +457,14 @@
 
 .coin-buttons-wrapper {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .coin-buttons {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 5px;
@@ -488,10 +488,16 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
 .two-button {
   margin-right: 13px;
   margin-left: 13px;
+  font-size: x-large;
+}
+
+.small-space {
+  background-color: rgb(22, 23, 40);
+  height: 100px;
+  width: 100vw;
 }
