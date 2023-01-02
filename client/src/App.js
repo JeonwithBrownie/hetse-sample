@@ -8,6 +8,7 @@ import History from "./components/History";
 import WinnerRecord from "./components/WinnerRecord";
 import SpaceBetweenPage from "./components/SpaceBetweenPage";
 import RealTimeRanking from "./components/RealTimeRanking";
+import Space1 from "./components/Space1";
 
 import io from "socket.io-client";
 import { useState, useEffect } from "react";
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Hero />
-      <SpaceBetweenPage />
+      <Space1 />
       <SpaceBetweenPage />
       <SpaceBetweenPage />
       <Game />
@@ -37,6 +38,11 @@ function App() {
       <History />
       <SpaceBetweenPage />
       <WinnerRecord />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
+      <SpaceBetweenPage />
       <SpaceBetweenPage />
       <RealTimeRanking />
       <SpaceBetweenPage />

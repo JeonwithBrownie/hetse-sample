@@ -14,16 +14,15 @@
   font-family: "DungGeunMo";
   display: grid;
   place-items: center;
-  left : 600px;
-  top : 150px;
-  position : fixed;
-  z-index: 50;
+  left: 600px;
+  top: 150px;
+  position: fixed;
+  z-index: 1;
 }
 body {
   margin: 0%;
   padding: 0%;
 }
-
 
 .chat-window {
   width: 300px;
@@ -108,7 +107,7 @@ body {
 
 #other .message-content {
   justify-content: flex-end;
-  background-color:green;
+  background-color: green;
 }
 
 #other .message-meta {

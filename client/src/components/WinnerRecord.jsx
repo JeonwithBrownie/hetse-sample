@@ -2,6 +2,8 @@ import React from "react";
 import "./main.css";
 import EachWinnerRecord from "./EachWinnerRecord";
 import RankText from "./RankText";
+import EachWinner from "./EachWinner";
+import doge from "../images/doge.png";
 
 const WinnerRecord = () => {
   return (
@@ -11,51 +13,70 @@ const WinnerRecord = () => {
         <div className="titleText">역대 고액 당첨자</div>
       </div>
       <div className="winner-record-layout">
-        <RankText/>
         <div className="winner-record-ranking">
-          <EachWinnerRecord
-            walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
+          <EachWinner
             rewardAmount={"52435802"}
-          />
-          <EachWinnerRecord
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
-          <EachWinnerRecord
+          <EachWinner
+            rewardAmount={"52435802"}
             walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
-            rewardAmount={"52435802"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
           />
+          <EachWinner
+            rewardAmount={"52435802"}
+            walletAddress={"0xd03345B2ABDA4103415B5eb20862990E1E3b33a8"}
+            userImage={doge}
+            userInput={"부자되고싶어요"}
+          />
+          
         </div>
       </div>
-      
     </div>
   );
 };
